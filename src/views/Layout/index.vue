@@ -1,4 +1,7 @@
 <template>
+
+  <!-- 吸顶导航组件 -->
+  <LayoutFixed/>
   <!-- layout组件 -->
   <LayoutNav />
   <!-- layoutHead组件 -->
@@ -13,6 +16,7 @@
 import LayoutNav from './components/LayoutNav.vue'
 import LayoutHeader from './components/LayoutHeader.vue'
 import LayoutFooter from './components/LayoutFooter.vue'
+import LayoutFixed from './components/LayouFixed.vue'
 </script>
 
 <style scoped lang="scss"></style>

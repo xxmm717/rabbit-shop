@@ -6,7 +6,7 @@
       </h1>
       <!-- 头部分类列表渲染 -->
       <ul class="app-header-nav">
-        <li class="home" v-for="item in categoryList" :key="item.id">
+        <li class="home" v-for="item in categoryStore.categoryList" :key="item.id">
           <RouterLink to="/">{{ item.name }}</RouterLink>
         </li>
       </ul>
@@ -21,16 +21,11 @@
 </template>
 
 <script setup>
-import { getCategoryApi } from '@/apis/layoutApi'
-import { onMounted,ref } from 'vue'
 
-const categoryList = ref([])
 // 获取分类列表
-const getCategoryList = async () => {
-  const res = await getCategoryApi()
-  categoryList.value = res.data.result
-}
-onMounted( () => getCategoryList() )
+// 使用pinia里的数据
+import { useCategoryStore } from '@/stores/category'
+const categoryStore = useCategoryStore()
 
 </script>
 
